@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>aidan-jdbc</module>
+        <module>aidan-design-pattern-01-simple-factory</module>
     </modules>
 
     <properties>
