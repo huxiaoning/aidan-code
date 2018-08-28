@@ -10,5 +10,6 @@ public class App {
     public static void main(String[] args) {
         Api api = Factory.createApi(1);
         api.test1("哈哈不要紧张，只是个测试而已！");
+        System.out.println(api.getClass());
     }
 }
