@@ -15,6 +15,7 @@
 *.iws
 *.iml
 *.ipr
+*
 
 ### NetBeans ###
 /nbproject/private/
@@ -23,3 +24,27 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+
+
+/.project
+.idea
+.project
+bin/*
+*.iml
+*/*.iml
+*/*.project
+/target/
+*/target/
+*/*/target/*
+.classpath
+/.settings/
+*/.settings/*
+*/bin/*
+*/*/.settings/*
+*/*/.settings/
+*.class
+**/node_modules/*
+**/logs/**/*.log
+**/logs/**/*.log.gz
+/eco-pricetime-sysc/
