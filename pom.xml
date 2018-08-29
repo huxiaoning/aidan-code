@@ -13,6 +13,7 @@
         <module>aidan-design-pattern-01-simple-factory</module>
         <module>aidan-design-pattern-02-facade</module>
         <module>aidan-design-pattern-03-adapter</module>
+        <module>aidan-design-pattern-04-singleton</module>
     </modules>
 
     <properties>
