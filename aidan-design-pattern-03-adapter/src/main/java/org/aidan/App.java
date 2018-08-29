@@ -1,13 +1,22 @@
 package org.aidan;
 
 /**
- * Hello world!
- *
+ * 使用适配器的客户端
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        /**
+         * 创建需要被适配的对象
+         */
+        Adaptee adaptee = new Adaptee();
+        /**
+         * 创建客户户需要调用的接口对象
+         */
+        Target target = new Adapter(adaptee);
+
+        /**
+         * 请求处理
+         */
+        target.request();
     }
 }
