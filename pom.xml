@@ -15,6 +15,7 @@
         <module>aidan-design-pattern-03-adapter</module>
         <module>aidan-design-pattern-04-singleton</module>
         <module>aidan-jdbc-01-statement</module>
+        <module>aidan-design-pattern-04-singleton-better</module>
     </modules>
 
     <properties>
