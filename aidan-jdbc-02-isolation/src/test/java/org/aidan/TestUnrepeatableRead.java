@@ -32,7 +32,9 @@ public class TestUnrepeatableRead {
             // 设置事务不自动提交，手动控制事务
             connection.setAutoCommit(false);
             // 设置 事务的隔离级别为读未提交 将会导致脏读
-            connection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+//            connection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+            // 设置 事务的隔离级别为可重复读 可避免重复读
+            connection.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
             /*
             第一次读
              */
