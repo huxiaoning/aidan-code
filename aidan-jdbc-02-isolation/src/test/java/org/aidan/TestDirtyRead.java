@@ -66,7 +66,7 @@ public class TestDirtyRead {
      */
     @Test
     public void testWrite() {
-        String sql = "update user set name = name + '1' where id = ?";
+        String sql = "update user set name = 'aidan被修改了' where id = ?";
         Connection connection = DBUtils.getConnection();
         PreparedStatement preparedStatement = null;
         try {
