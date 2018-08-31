@@ -13,6 +13,8 @@ import java.sql.SQLException;
  * 当事务的隔离级别为    读未提交(Read uncommitted)时 会产生脏读的问题
  * <p>
  * 解决办法：将读写线程的事务隔离级别调成 读已提交或更高级别
+ *
+ * 操作：在写事务提交事务处打上断点，先执行写事务(test2)  断点拿到后再执行读事务(test1) 是否读到没有提交的修改了？ 放掉断点
  */
 public class TestDirtyRead {
 
