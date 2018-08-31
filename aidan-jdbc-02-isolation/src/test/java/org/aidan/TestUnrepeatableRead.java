@@ -29,6 +29,8 @@ public class TestUnrepeatableRead {
         ResultSet resultSet1 = null;
         ResultSet resultSet2 = null;
         try {
+            // 设置事务不自动提交，手动控制事务
+            connection.setAutoCommit(false);
             // 设置 事务的隔离级别为读未提交 将会导致脏读
             connection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
             /*
@@ -54,8 +56,13 @@ public class TestUnrepeatableRead {
                 String name = resultSet2.getString("name");
                 System.out.println(name);
             }
-
+            connection.commit();
         } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
             e.printStackTrace();
         } finally {
             if (resultSet1 != null) {
