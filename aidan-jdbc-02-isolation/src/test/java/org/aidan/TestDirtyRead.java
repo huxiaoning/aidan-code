@@ -11,6 +11,8 @@ import java.sql.SQLException;
 /**
  * 测试一下脏读:  读到其他事务未提交的更改
  * 当事务的隔离级别为    读未提交(Read uncommitted)时 会产生脏读的问题
+ * <p>
+ * 解决办法：将读写线程的事务隔离级别调成 读已提交或更高级别
  */
 public class TestDirtyRead {
 
@@ -25,7 +27,9 @@ public class TestDirtyRead {
         ResultSet resultSet = null;
         try {
             // 设置 事务的隔离级别为读未提交 将会导致脏读
-            connection.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+//            connection.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+            //设置 事务的隔离级别为读已提交 可以避免脏读
+            connection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
             preparedStatement = connection.prepareStatement(sql);
             // 设置sql中的第1个?处的值为1
             preparedStatement.setInt(1, 1);
