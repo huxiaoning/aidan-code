@@ -13,6 +13,7 @@
 
     <name>aidan-jdbc-02-isolation</name>
     <!-- FIXME change it to the project's website -->
+    <!-- 事务的隔离级别 -->
     <url>http://www.example.com</url>
 
     <properties>
