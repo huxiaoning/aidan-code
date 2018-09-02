@@ -17,6 +17,7 @@
         <module>aidan-jdbc-01-statement</module>
         <module>aidan-design-pattern-04-singleton-better</module>
         <module>aidan-jdbc-02-isolation</module>
+        <module>aidan-jdbc-03-batch</module>
     </modules>
 
     <properties>
