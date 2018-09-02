@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * 测试一下幻读: 同一事务中两次读取到的数据行数不一致，两次读取期间有其他事务插入或删除了记录，并提交了事务
+ * 测试一下幻读: A事务更新表中所有的name字段为aidan 然后读取所有的name字段，发现有一个没有被修改成aidan。A事务写与读期间有B事务插入了新的数据
  * 产生原因：当事务隔离级别为 可重复读(Repeatable Read)或以下时，会产生幻读的问题
  * <p>
  * * // * 解决办法：将读写线程的事务隔离级别调成 串行化
@@ -22,11 +22,10 @@ public class TestPhantomRead {
      */
     @Test
     public void testRead() {
-        String sql = "select count(id) as count from user a";
+        String sql = "update user set name = 'Tom'";
         Connection connection = DBUtils.getConnection();
         PreparedStatement preparedStatement1 = null;
         PreparedStatement preparedStatement2 = null;
-        ResultSet resultSet1 = null;
         ResultSet resultSet2 = null;
         try {
             // 设置事务不自动提交，手动控制事务
@@ -34,27 +33,26 @@ public class TestPhantomRead {
             // 设置 事务的隔离级别为读未提交 将会导致脏读
             connection.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
             // 设置 事务的隔离级别为可重复读 可避免重复读
-//            connection.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+//            connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             /*
-            第一次读
+            第一次:写 更新所有记录的name字段为'aidan'
              */
             preparedStatement1 = connection.prepareStatement(sql);
             // 设置sql中的第1个?处的值为1
-            resultSet1 = preparedStatement1.executeQuery();
-            while (resultSet1.next()) {
-                int count = resultSet1.getInt("count");
-                System.out.println(count);
-            }
+            int result = preparedStatement1.executeUpdate();
+            System.out.println("更新了" + result + "条记录");
+
 
             /*
             第二次读
              */
+            sql = "select a.name from user a";
             preparedStatement2 = connection.prepareStatement(sql);
             // 设置sql中的第1个?处的值为1
             resultSet2 = preparedStatement2.executeQuery();
             while (resultSet2.next()) {
-                int count = resultSet2.getInt("count");
-                System.out.println(count);
+                String name = resultSet2.getString("name");
+                System.out.println(name);
             }
             connection.commit();
         } catch (SQLException e) {
@@ -65,13 +63,6 @@ public class TestPhantomRead {
             }
             e.printStackTrace();
         } finally {
-            if (resultSet1 != null) {
-                try {
-                    resultSet1.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
             if (resultSet2 != null) {
                 try {
                     resultSet2.close();
