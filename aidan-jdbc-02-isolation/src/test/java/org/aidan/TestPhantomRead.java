@@ -48,7 +48,7 @@ public class TestPhantomRead {
 
 
             /*
-            第二次读
+            第二次写
              */
             sql = "insert into user (id,name,age) values (2,'JACK',36)";
             preparedStatement2 = connection.prepareStatement(sql);
