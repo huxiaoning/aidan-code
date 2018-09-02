@@ -22,10 +22,11 @@ public class TestPhantomRead {
      */
     @Test
     public void testRead() {
-        String sql = "update user set name = 'Tom'";
+        String sql = "select count(id) count from user where id > 1";
         Connection connection = DBUtils.getConnection();
         PreparedStatement preparedStatement1 = null;
         PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
         ResultSet resultSet2 = null;
         try {
             // 设置事务不自动提交，手动控制事务
@@ -35,25 +36,25 @@ public class TestPhantomRead {
             // 设置 事务的隔离级别为可重复读 可避免重复读
 //            connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             /*
-            第一次:写 更新所有记录的name字段为'aidan'
+            第一次:读id>1的记录有几条
              */
             preparedStatement1 = connection.prepareStatement(sql);
             // 设置sql中的第1个?处的值为1
-            int result = preparedStatement1.executeUpdate();
-            System.out.println("更新了" + result + "条记录");
+            resultSet1 = preparedStatement1.executeQuery();
+            while (resultSet1.next()) {
+                int count = resultSet1.getInt("count");
+                System.out.println("id大于1的记录有" + count + "条。");
+            }
 
 
             /*
             第二次读
              */
-            sql = "select a.name from user a";
+            sql = "insert into user (id,name,age) values (2,'JACK',36)";
             preparedStatement2 = connection.prepareStatement(sql);
             // 设置sql中的第1个?处的值为1
-            resultSet2 = preparedStatement2.executeQuery();
-            while (resultSet2.next()) {
-                String name = resultSet2.getString("name");
-                System.out.println(name);
-            }
+            int result = preparedStatement2.executeUpdate();
+            System.out.println("插入了" + result + "条数据。");
             connection.commit();
         } catch (SQLException e) {
             try {
@@ -63,6 +64,13 @@ public class TestPhantomRead {
             }
             e.printStackTrace();
         } finally {
+            if (resultSet1 != null) {
+                try {
+                    resultSet1.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
             if (resultSet2 != null) {
                 try {
                     resultSet2.close();
@@ -99,7 +107,7 @@ public class TestPhantomRead {
      */
     @Test
     public void testWrite() {
-        String sql = "insert into user (id,name,age) values (100,'jack',25)";
+        String sql = "insert into user (id,name,age) values (2,'jack',25)";
         Connection connection = DBUtils.getConnection();
         PreparedStatement preparedStatement = null;
         try {
