@@ -13,6 +13,7 @@
 
     <name>aidan-jdbc-04-connection-pool</name>
     <!-- FIXME change it to the project's website -->
+    <!-- 数据库连接池 dbcp c3p0 -->
     <url>http://www.example.com</url>
 
     <properties>
