@@ -18,11 +18,13 @@
         <module>aidan-design-pattern-04-singleton-better</module>
         <module>aidan-jdbc-02-isolation</module>
         <module>aidan-jdbc-03-batch</module>
+        <module>aidan-jdbc-04-connection-pool</module>
     </modules>
 
     <properties>
         <junit.version>4.12</junit.version>
         <mysql.version>5.1.47</mysql.version>
+        <dbcp.version>1.4</dbcp.version>
     </properties>
 
     <dependencyManagement>
