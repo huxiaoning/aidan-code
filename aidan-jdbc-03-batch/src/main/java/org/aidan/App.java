@@ -18,9 +18,9 @@ public class App {
         PreparedStatement preparedStatement = null;
         try {
             connection.setAutoCommit(false);
+            String sql = "INSERT INTO user (id,name,age) VALUES (?,?,?)";
+            preparedStatement = connection.prepareStatement(sql);
             for (int i = 1; i <= sum; i++) {
-                String sql = "INSERT INTO user (id,name,age) VALUES (?,?,?)";
-                preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setInt(1, i);
                 preparedStatement.setString(2, "Aidan" + i);
                 preparedStatement.setInt(3, 30);
