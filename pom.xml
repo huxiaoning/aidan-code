@@ -20,6 +20,7 @@
         <module>aidan-jdbc-03-batch</module>
         <module>aidan-jdbc-04-connection-pool</module>
         <module>aidan-jdbc-05-procedure</module>
+        <module>aidan-jdbc-06-transaction-savepoint</module>
     </modules>
 
     <properties>
