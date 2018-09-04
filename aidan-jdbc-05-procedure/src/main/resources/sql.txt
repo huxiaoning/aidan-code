@@ -1,0 +1,11 @@
+DROP PROCEDURE IF EXISTS removeUserByName;
+-- 创建存储过程：根据name删除记录，并返回删除的记录数
+CREATE PROCEDURE removeUserByName(IN p_name VARCHAR(100),OUT count INT UNSIGNED)
+BEGIN
+	DELETE FROM user WHERE name = p_name;
+	SELECT ROW_COUNT() INTO count;
+END;
+
+CALL removeUserByName('aidan',@count);
+
+SELECT @count;

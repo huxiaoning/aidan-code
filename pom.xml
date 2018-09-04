@@ -19,6 +19,7 @@
         <module>aidan-jdbc-02-isolation</module>
         <module>aidan-jdbc-03-batch</module>
         <module>aidan-jdbc-04-connection-pool</module>
+        <module>aidan-jdbc-05-procedure</module>
     </modules>
 
     <properties>
