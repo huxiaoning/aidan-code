@@ -22,6 +22,7 @@
         <module>aidan-jdbc-05-procedure</module>
         <module>aidan-jdbc-06-transaction-savepoint</module>
         <module>aidan-jdbc-07-metadata</module>
+        <module>aidan-test</module>
     </modules>
 
     <properties>
