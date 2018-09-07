@@ -23,6 +23,7 @@
         <module>aidan-jdbc-06-transaction-savepoint</module>
         <module>aidan-jdbc-07-metadata</module>
         <module>aidan-test</module>
+        <module>aidan-design-pattern-05-factory-method</module>
     </modules>
 
     <properties>
