@@ -24,6 +24,7 @@
         <module>aidan-jdbc-07-metadata</module>
         <module>aidan-test</module>
         <module>aidan-design-pattern-05-factory-method</module>
+        <module>aidan-xml-01-dom</module>
     </modules>
 
     <properties>
@@ -31,6 +32,9 @@
         <mysql.version>5.1.47</mysql.version>
         <dbcp.version>1.4</dbcp.version>
         <c3p0.version>0.9.5.2</c3p0.version>
+        <okhttp3.version>3.11.0</okhttp3.version>
+        <fastjson.version>1.2.49</fastjson.version>
+        <httpclient.version>4.5.1</httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +59,22 @@
                 <artifactId>c3p0</artifactId>
                 <version>${c3p0.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
         </dependencies>
 
 
