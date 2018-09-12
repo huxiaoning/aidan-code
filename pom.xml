@@ -25,6 +25,7 @@
         <module>aidan-test</module>
         <module>aidan-design-pattern-05-factory-method</module>
         <module>aidan-xml-01-dom</module>
+        <module>aidan-javaweb-01-servlet</module>
     </modules>
 
     <properties>
