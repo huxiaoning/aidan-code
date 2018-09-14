@@ -26,6 +26,7 @@
         <module>aidan-design-pattern-05-factory-method</module>
         <module>aidan-xml-01-dom</module>
         <module>aidan-javaweb-01-servlet</module>
+        <module>aidan-javaweb-02-servlet-request</module>
         <module>aidan-design-pattern-06-abstract-factory</module>
     </modules>
 
