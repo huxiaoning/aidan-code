@@ -28,6 +28,7 @@
         <module>aidan-javaweb-01-servlet</module>
         <module>aidan-javaweb-02-servlet-request</module>
         <module>aidan-design-pattern-06-abstract-factory</module>
+        <module>aidan-javaweb-03-servlet-response</module>
         <module>aidan-design-pattern-07-builder</module>
         <module>aidan-design-pattern-08-prototype</module>
     </modules>
