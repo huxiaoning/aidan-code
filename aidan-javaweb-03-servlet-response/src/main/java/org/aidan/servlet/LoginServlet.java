@@ -31,7 +31,7 @@ public class LoginServlet implements Servlet {
         Locale locale = response.getLocale();
         System.out.println("locale = " + locale);
         // E:\developerInstall\Tomcat\apache-tomcat-7.0.70\conf\web.xml里面查找word
-        response.setContentType("application/msword");
+//        response.setContentType("application/msword");
         try {
             PrintWriter writer = response.getWriter();
             writer.println("Hello World!");
