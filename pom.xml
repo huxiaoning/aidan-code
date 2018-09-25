@@ -34,6 +34,7 @@
         <module>aidan-design-pattern-09-mediator</module>
         <module>aidan-debug</module>
         <module>aidan-javaweb-04-servlet-GenericServlet</module>
+        <module>aidan-javaweb-05-servlet-HttpServlet</module>
     </modules>
 
     <properties>
