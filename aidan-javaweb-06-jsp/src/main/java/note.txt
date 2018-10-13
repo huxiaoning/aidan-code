@@ -1,0 +1,12 @@
+JSP九大内置对象
+PageContext pageContext             可以获取其他八个内置对象
+HttpServletRequest request
+HttpSession session
+ServletContext application
+
+JspWriter out                       输出内容到jsp页面
+ServletConfig config
+HttpServletResponse response
+Object(this) page                   当前jsp生成的java类对象的引用,jsp其实是个servlet
+
+Throwable exception

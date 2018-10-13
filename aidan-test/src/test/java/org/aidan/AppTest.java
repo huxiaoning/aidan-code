@@ -1,6 +1,5 @@
 package org.aidan;
 
-import com.alibaba.fastjson.JSON;
 import okhttp3.*;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -14,7 +13,6 @@ import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 /**
@@ -70,9 +68,9 @@ public class AppTest {
         String body = "";
         String url = "";
         String encoding = "UTF-8";
-        Map<String,String> map = new HashMap<>();
-        map.put("mobile","341458");
-        map.put("type","INTERNAL_TAKE");
+        Map<String, String> map = new HashMap<>();
+        map.put("mobile", "341458");
+        map.put("type", "INTERNAL_TAKE");
 
         //创建httpclient对象
         CloseableHttpClient client = HttpClients.createDefault();
@@ -81,7 +79,7 @@ public class AppTest {
 
         //装填参数
         List<NameValuePair> nvps = new ArrayList<>();
-        if(map!=null){
+        if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 nvps.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
             }
@@ -89,8 +87,8 @@ public class AppTest {
         //设置参数到请求对象中
         httpPost.setEntity(new UrlEncodedFormEntity(nvps, encoding));
 
-        System.out.println("请求地址："+url);
-        System.out.println("请求参数："+nvps.toString());
+        System.out.println("请求地址：" + url);
+        System.out.println("请求参数：" + nvps.toString());
 
         //设置header信息
         //指定报文头【Content-type】、【User-Agent】
@@ -111,4 +109,18 @@ public class AppTest {
 
         System.out.println(body);
     }
+
+
+    @Test
+    public void test4() {
+        String bwjDomain = "http://owstest.deppon.com";
+        if (!bwjDomain.startsWith("https") && bwjDomain.startsWith("http")) {
+            StringBuilder builder = new StringBuilder(bwjDomain);
+            builder.insert(4, "s");
+            bwjDomain = builder.toString();
+        }
+
+        System.out.println(bwjDomain);
+    }
+
 }

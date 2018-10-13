@@ -35,6 +35,8 @@
         <module>aidan-debug</module>
         <module>aidan-javaweb-04-servlet-GenericServlet</module>
         <module>aidan-javaweb-05-servlet-HttpServlet</module>
+        <module>aidan-javaweb-06-jsp</module>
+        <module>aidan-javaweb-07-forward-redirect</module>
     </modules>
 
     <properties>
