@@ -1,7 +1,7 @@
 package org.aidan.generalized;
 
 /**
- * @author 胡小宁
+ * @author Aidan
  * @创建时间：2018/9/26 下午4:46
  * @描述: 广义中介者测试客户端类
  */

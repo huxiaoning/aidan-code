@@ -1,7 +1,7 @@
 package org.aidan.template;
 
 /**
- * @author 胡小宁
+ * @author Aidan
  * @创建时间：2018/9/7 上午9:51
  * @描述: 创建器 声明工厂方法
  */

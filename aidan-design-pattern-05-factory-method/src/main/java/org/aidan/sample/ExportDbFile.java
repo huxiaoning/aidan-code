@@ -1,7 +1,7 @@
 package org.aidan.sample;
 
 /**
- * @author 胡小宁
+ * @author Aidan
  * @创建时间：2018/9/7 上午10:13
  * @描述: 导出数据到文件的接口实现之一
  */

@@ -1,7 +1,7 @@
 package org.aidan.parallel;
 
 /**
- * @author 胡小宁
+ * @author Aidan
  * @创建时间：2018/9/11 下午4:15
  * @描述: TODO
  */

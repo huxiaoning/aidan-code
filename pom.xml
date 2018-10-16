@@ -37,6 +37,7 @@
         <module>aidan-javaweb-05-servlet-HttpServlet</module>
         <module>aidan-javaweb-06-jsp</module>
         <module>aidan-javaweb-07-forward-redirect</module>
+        <module>aidan-design-pattern-10-proxy</module>
     </modules>
 
     <properties>

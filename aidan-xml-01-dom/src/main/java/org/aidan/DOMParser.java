@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author 胡小宁
+ * @author Aidan
  * @创建时间：2018/9/7 下午3:01
  * @描述: 基于DOM的xml解析器
  */
