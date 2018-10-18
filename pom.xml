@@ -38,6 +38,7 @@
         <module>aidan-javaweb-06-jsp</module>
         <module>aidan-javaweb-07-forward-redirect</module>
         <module>aidan-design-pattern-10-proxy</module>
+        <module>aidan-design-pattern-11-observer</module>
     </modules>
 
     <properties>
