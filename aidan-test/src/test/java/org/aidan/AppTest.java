@@ -123,4 +123,32 @@ public class AppTest {
         System.out.println(bwjDomain);
     }
 
+
+    @Test
+    public void test5() {
+        String str = "\\u534e\\u4e3a\\u4e91\\u81f4\\u529b\\u4e8e\\u63d0\\u4f9b\\u4e16\\u754c\\u4e00\\u6d41\\u7684\\u516c\\u6709\\u4e91\\u670d\\u52a1\\uff0c\\u8fde\\u63a5\\u4f01\\u4e1a\\u73b0\\u5728\\u4e0e\\u672a\\u6765\\u3002";
+        System.out.println(unicodeToCn(str));
+
+    }
+
+    private static String unicodeToCn(String unicode) {
+        /** 以 \ u 分割，因为java注释也能识别unicode，因此中间加了一个空格*/
+        String[] strs = unicode.split("\\\\u");
+        String returnStr = "";
+        // 由于unicode字符串以 \ u 开头，因此分割出的第一个字符是""。
+        for (int i = 1; i < strs.length; i++) {
+            returnStr += (char) Integer.valueOf(strs[i], 16).intValue();
+        }
+        return returnStr;
+    }
+
+    private static String cnToUnicode(String cn) {
+        char[] chars = cn.toCharArray();
+        String returnStr = "";
+        for (int i = 0; i < chars.length; i++) {
+            returnStr += "\\u" + Integer.toString(chars[i], 16);
+        }
+        return returnStr;
+    }
+
 }

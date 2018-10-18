@@ -33,7 +33,11 @@
             <artifactId>ojdbc6</artifactId>
             <version>10.2.0.4.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.8</version>
+        </dependency>
 
     </dependencies>
 

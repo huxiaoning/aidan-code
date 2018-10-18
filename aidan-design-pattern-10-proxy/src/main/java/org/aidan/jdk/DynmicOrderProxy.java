@@ -16,6 +16,12 @@ public class DynmicOrderProxy implements InvocationHandler {
      */
     private OrderApi order;
 
+    /**
+     * 绑定
+     *
+     * @param order
+     * @return
+     */
     public OrderApi getProxyInterface(OrderApi order) {
         // 设置被代理的对象,好方便invoke里面的操作
         this.order = order;
