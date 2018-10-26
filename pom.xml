@@ -41,6 +41,7 @@
         <module>aidan-design-pattern-11-observer</module>
         <module>aidan-design-pattern-12-command</module>
         <module>aidan-design-pattern-13-iterator</module>
+        <module>aidan-design-pattern-14-composite</module>
     </modules>
 
     <properties>
