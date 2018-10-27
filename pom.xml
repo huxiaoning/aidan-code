@@ -42,6 +42,7 @@
         <module>aidan-design-pattern-12-command</module>
         <module>aidan-design-pattern-13-iterator</module>
         <module>aidan-design-pattern-14-composite</module>
+        <module>aidan-design-pattern-15-template-method</module>
     </modules>
 
     <properties>
