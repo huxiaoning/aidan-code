@@ -1,6 +1,7 @@
 package org.aidan;
 
 import okhttp3.*;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -151,4 +152,13 @@ public class AppTest {
         return returnStr;
     }
 
+
+    @Test
+    public void test6() {
+        String uuid = "F2CB100A-517F-4188-829D-30070A17BCA0";
+        String pwd = DigestUtils.md5Hex(uuid + "root");
+        pwd = DigestUtils.md5Hex(pwd + "admin");
+        pwd = DigestUtils.md5Hex(pwd + "huxiaoning");
+        System.out.println(pwd);
+    }
 }

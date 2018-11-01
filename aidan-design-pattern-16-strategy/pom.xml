@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aidan-test</artifactId>
+    <artifactId>aidan-design-pattern-16-strategy</artifactId>
 
-    <name>aidan-test</name>
-    <!-- FIXME change it to the project's website -->
+    <name>aidan-design-pattern-16-strategy</name>
+    <!-- 策略模式 -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -25,28 +25,9 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.11</version>
-        </dependency>
-
     </dependencies>
 
     <build>

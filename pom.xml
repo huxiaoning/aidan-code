@@ -43,6 +43,10 @@
         <module>aidan-design-pattern-13-iterator</module>
         <module>aidan-design-pattern-14-composite</module>
         <module>aidan-design-pattern-15-template-method</module>
+        <module>aidan-design-pattern-16-strategy</module>
+        <module>aidan-util</module>
+        <module>aidan-design-pattern-17-state</module>
+        <module>aidan-design-pattern-18-memento</module>
     </modules>
 
     <properties>
