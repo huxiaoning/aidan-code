@@ -47,6 +47,7 @@
         <module>aidan-util</module>
         <module>aidan-design-pattern-17-state</module>
         <module>aidan-design-pattern-18-memento</module>
+        <module>aidan-design-pattern-19-flyweight</module>
     </modules>
 
     <properties>
