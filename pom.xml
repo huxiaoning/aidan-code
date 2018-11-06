@@ -50,6 +50,7 @@
         <module>aidan-design-pattern-19-flyweight</module>
         <module>aidan-design-pattern-20-interpreter</module>
         <module>aidan-design-pattern-21-decorator</module>
+        <module>aidan-design-pattern-22-chain-of-responsibility</module>
     </modules>
 
     <properties>
