@@ -49,6 +49,7 @@
         <module>aidan-design-pattern-18-memento</module>
         <module>aidan-design-pattern-19-flyweight</module>
         <module>aidan-design-pattern-20-interpreter</module>
+        <module>aidan-design-pattern-21-decorator</module>
     </modules>
 
     <properties>
