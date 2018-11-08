@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aidan-javaweb-08-filter</artifactId>
+    <artifactId>aidan-javaweb-09-listener</artifactId>
     <packaging>war</packaging>
 
-    <name>aidan-javaweb-08-filter Maven Webapp</name>
-    <!-- web过滤器 -->
+    <name>aidan-javaweb-09-listener Maven Webapp</name>
+    <!-- web监听器 -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -38,7 +38,7 @@
     </dependencies>
 
     <build>
-        <finalName>aidan-javaweb-08-filter</finalName>
+        <finalName>aidan-javaweb-09-listener</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

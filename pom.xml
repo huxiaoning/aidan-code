@@ -54,6 +54,7 @@
         <module>aidan-design-pattern-23-bridge</module>
         <module>aidan-design-pattern-24-visitor</module>
         <module>aidan-javaweb-08-filter</module>
+        <module>aidan-javaweb-09-listener</module>
     </modules>
 
     <properties>
