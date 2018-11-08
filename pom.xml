@@ -55,6 +55,7 @@
         <module>aidan-design-pattern-24-visitor</module>
         <module>aidan-javaweb-08-filter</module>
         <module>aidan-javaweb-09-listener</module>
+        <module>aidan-spring-01</module>
     </modules>
 
     <properties>
