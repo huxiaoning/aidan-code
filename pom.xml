@@ -53,6 +53,7 @@
         <module>aidan-design-pattern-22-chain-of-responsibility</module>
         <module>aidan-design-pattern-23-bridge</module>
         <module>aidan-design-pattern-24-visitor</module>
+        <module>aidan-javaweb-08-filter</module>
     </modules>
 
     <properties>
