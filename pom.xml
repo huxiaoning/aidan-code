@@ -56,6 +56,7 @@
         <module>aidan-javaweb-08-filter</module>
         <module>aidan-javaweb-09-listener</module>
         <module>aidan-spring-01</module>
+        <module>aidan-spring-02-web</module>
     </modules>
 
     <properties>
