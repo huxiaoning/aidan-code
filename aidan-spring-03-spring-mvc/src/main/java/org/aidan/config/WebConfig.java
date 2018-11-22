@@ -1,13 +1,18 @@
 package org.aidan.config;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 /**
  * @author Aidan
@@ -17,6 +22,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"org.aidan.web"})
+@ImportResource("classpath:spring-mvc.xml")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     /**
@@ -45,7 +51,25 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
         viewResolver.setSuffix(".jsp");
+        viewResolver.setViewClass(JstlView.class);
         viewResolver.setExposeContextBeansAsAttributes(true);
         return viewResolver;
     }
+
+    @Bean
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+//        messageSource.setBasename("file:///etc/spittr/messages");
+        // 上面的被覆盖掉了
+        messageSource.setBasename("classpath:messages");
+        messageSource.setCacheSeconds(10);
+//        messageSource.setUseCodeAsDefaultMessage(true);
+        return messageSource;
+    }
+
+    @Bean("localeResolver")
+    public SessionLocaleResolver sessionLocaleResolver() {
+        return new SessionLocaleResolver();
+    }
+
 }

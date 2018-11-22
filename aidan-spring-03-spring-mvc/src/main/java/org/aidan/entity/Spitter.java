@@ -20,28 +20,28 @@ public class Spitter {
      * 非空，5到16个字符
      */
     @NotBlank
-    @Size(min = 5, max = 6)
+    @Size(min = 5, max = 16, message = "{username.size}")
     private String username;
 
     /**
      * 非空，5到25个字符
      */
     @NotNull
-    @Size(min = 5, max = 25)
+    @Size(min = 5, max = 25, message = "{password.size}")
     private String password;
 
     /**
      * 非空，2到30个字符
      */
-    @NotNull
-    @Size(min = 2, max = 30)
+    @NotBlank
+    @Size(min = 2, max = 30, message = "{firstName.size}")
     private String firstName;
 
     /**
      * 非空，2到30个字符
      */
     @NotNull
-    @Size(min = 2, max = 30)
+    @Size(min = 2, max = 30, message = "{lastName.size}")
     private String lastName;
 
     public Spitter() {
