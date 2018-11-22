@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author Aidan
@@ -38,6 +40,24 @@ public class SpitterController {
          */
 
         if (errors.hasErrors()) {
+            List<ObjectError> allErrors = errors.getAllErrors();
+            for (ObjectError objectError : allErrors) {
+                System.out.println(objectError.getObjectName());
+                System.out.println("---");
+                Object[] arguments = objectError.getArguments();
+                for (Object argument : arguments) {
+                    System.out.println(argument);
+                }
+                System.out.println("---");
+                System.out.println(objectError.getCode());
+                System.out.println("---");
+                String[] codes = objectError.getCodes();
+                for (String code : codes) {
+                    System.out.println(code);
+                }
+                System.out.println("---");
+                System.out.println(objectError.getDefaultMessage());
+            }
             return "registerForm";
         }
 

@@ -17,6 +17,6 @@ public class SpitterRepositoryImpl implements SpitterRepository {
 
     @Override
     public Spitter findByUserName(String username) {
-        return null;
+        return new Spitter(24L, "thinkgem", "thinkgem", "thinkgem", "thinkgem");
     }
 }
