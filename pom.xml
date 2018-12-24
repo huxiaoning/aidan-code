@@ -58,6 +58,10 @@
         <module>aidan-spring-01</module>
         <module>aidan-spring-02-web</module>
         <module>aidan-spring-03-spring-mvc</module>
+        <module>aidan-spring-04-spring-mvc-thymeleaf</module>
+        <module>aidan-spring-05-spring-mvc-web-xml</module>
+        <module>aidan-spring-06-spring-jdbc</module>
+        <module>aidan-spring-07-spring-hibernate</module>
     </modules>
 
     <properties>

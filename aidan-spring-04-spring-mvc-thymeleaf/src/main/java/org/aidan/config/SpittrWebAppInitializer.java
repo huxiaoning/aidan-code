@@ -1,9 +1,9 @@
 package org.aidan.config;
 
-import org.aidan.servlet.MyFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
 
 /**
  * @author Aidan
@@ -50,7 +50,7 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
     }
 
     @Override
-    protected Filter[] getServletFilters() {
-        return new Filter[]{new MyFilter()};
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        registration.setMultipartConfig(new MultipartConfigElement("/tmp/spittr/uploads"));
     }
 }

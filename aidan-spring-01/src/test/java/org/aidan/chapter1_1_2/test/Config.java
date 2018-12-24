@@ -3,6 +3,7 @@ package org.aidan.chapter1_1_2.test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer;
 import org.springframework.context.annotation.*;
+import org.springframework.core.env.Environment;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -109,6 +110,8 @@ public class Config {
 
 
         PreferencesPlaceholderConfigurer properties = context.getBean(PreferencesPlaceholderConfigurer.class);
+        Environment bean = context.getBean(Environment.class);
+        System.out.println(bean);
         context.close();
 
     }
